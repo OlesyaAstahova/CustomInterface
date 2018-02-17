@@ -35,7 +35,7 @@ namespace CustomInterface
         public Hexagon(string name) : base(name) { }
         public override void Draw()
         {
-            Console.WriteLine("Drawing {0} the Hexagon", PetName);
+            Console.WriteLine("{0} the Hexagon", PetName);
         }
         // Реализация IPointy.
         public byte Points

@@ -11,7 +11,7 @@ namespace CustomInterface
         static void Main(string[] args)
         {
             Console.WriteLine("***** Fun With Interfaces *****\n");
-           
+         
             /// Вызывает свойствоPoints, определенное интерфейсом IPointy.
             Hexagon hex = new Hexagon();
             Console.WriteLine("Points: {0}", hex.Points);
@@ -28,7 +28,18 @@ namespace CustomInterface
             {
                 Console.WriteLine(e.Message);
             }
-        
+            
+            // Можно ли hex2 интерпритировать как IPointy?
+            Hexagon hex2 = new Hexagon("Peter");
+            IPointy itfPt2 = hex2 as IPointy;
+            if (itfPt2 != null){
+                hex2.Draw();
+             Console.WriteLine("Points: {0}", itfPt2.Points);
+            }
+            else
+            {
+                Console.WriteLine("OOPS! Not pointy...");
+            }
             Console.ReadLine();
         }
     }
