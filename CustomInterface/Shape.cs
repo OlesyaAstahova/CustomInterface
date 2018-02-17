@@ -29,7 +29,7 @@ namespace CustomInterface
         }
     }
 
-    class Hexagon : Shape, IPointy
+    class Hexagon : Shape, IPointy, IDraw3D
     {
         public Hexagon() { }
         public Hexagon(string name) : base(name) { }
@@ -42,6 +42,11 @@ namespace CustomInterface
         {
             get { return 6; }
         }
+        public void Draw3D()
+        {
+            Console.WriteLine("Drawing Hexagon in 3D!\n");
+        }
+
     }
 
     class Triangle : Shape, IPointy

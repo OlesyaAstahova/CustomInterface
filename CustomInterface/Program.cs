@@ -15,7 +15,7 @@ namespace CustomInterface
             // Создать массив элементов Shape.
             Shape[] myShapes = {
                                    new Hexagon(), new Circle(),
-                                   new Triangle("Joe"), new Circle("JoJo")
+                                   new Triangle(), new Circle("JoJo")
                                };
             for (int i = 0; i < myShapes.Length; i++)
             {
@@ -33,10 +33,21 @@ namespace CustomInterface
                     Console.WriteLine("-> {0}\'s not pointy!", myShapes[i].PetName);
                     Console.WriteLine();
                 }
+                if (myShapes[i] is IDraw3D)
+                {
+                    DrawIn3D((IDraw3D)myShapes[i]);
+                }
+
             }
 
           
             Console.ReadLine();
+        }
+
+        static void DrawIn3D (IDraw3D itf3d)
+        {
+            Console.WriteLine("-> Drawing IDraw3D compatible type\n");
+            itf3d.Draw3D();
         }
     }
 }
