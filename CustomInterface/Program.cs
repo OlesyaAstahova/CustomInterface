@@ -40,7 +40,6 @@ namespace CustomInterface
 
             }
 
-          
             Console.ReadLine();
         }
 
